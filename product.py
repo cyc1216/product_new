@@ -1,16 +1,21 @@
-#讀取檔案
+import os #operating system
 product = []
-with open('product.csv', 'r', encoding = 'utf-8') as f:
-	for line in f :
-		if '商品,價格' in line:
-			continue
-		s = line.strip().split(',')
-		product.append(s)
-	'''
-    上面取出資料並忽略表頭的快寫法
-	product = [line.strip().split(',') for line in f if '商品,價格'  not in line ]
-	'''
-print(product)	
+if os.path.isfile(product.csv):
+	print('有該檔案')
+	#讀取檔案
+	with open('product.csv', 'r', encoding = 'utf-8') as f:
+		for line in f :
+			if '商品,價格' in line:
+				continue
+			s = line.strip().split(',')
+			product.append(s)
+		'''
+	    上面取出資料並忽略表頭的快寫法
+		product = [line.strip().split(',') for line in f if '商品,價格'  not in line ]
+		'''
+	print(product)
+else:
+	print('沒有該檔案')
 
 #輸入新的資料
 while True:
