@@ -23,7 +23,7 @@ print(product)
 
 #印出所有商品與價格
 for p in product:
-	print(p[0], '的價格為', [1])
+	print(p[0], '的價格為', p[1])
 
 #將輸入的資料寫入檔案
 with open('product.csv', 'w', encoding='utf-8') as f:
